@@ -1,0 +1,76 @@
+body {
+  
+  background-size: cover; /* Ensure the image covers the entire background */
+  background-position: center; /* Center the background image */
+  background-attachment: fixed; /* Make the background image fixed while scrolling */
+  font-family: Arial, sans-serif;
+}
+.account-form {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+  }
+  
+  .account-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333333;
+  }
+  
+  .account-form p {
+    color: red; /* Change color for feedback messages */
+    text-align: center;
+  }
+  
+  .account-form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .account-form label {
+    display: block;
+    margin: 10px 0;
+    font-size: 14px;
+  }
+  
+  .account-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px 0;
+    transition: background-color 0.3s;
+  }
+  
+  .account-form button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+  
+  .account-form button:hover:not(:disabled) {
+    background-color: #0056b3;
+  }
+  
+  .account-form .toggle-button {
+    background: none;
+    border: none;
+    color: #007bff;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  
+  .account-form .toggle-button:hover {
+    color: #0056b3;
+  }
+  

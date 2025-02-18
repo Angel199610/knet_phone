@@ -1,0 +1,86 @@
+.about {
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.about h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: black;
+}
+
+/* Vision, Mission, Values section */
+.vision-mission-values {
+  margin-bottom: 50px;
+}
+
+.vision-mission-values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three columns */
+  gap: 20px; /* Space between the cards */
+}
+
+.card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.card h3 {
+  margin-bottom: 15px;
+  color: black;
+}
+
+.card p {
+  color: #0f0f0f;
+}
+
+/* Independent Team Grid Section */
+.team-grid-section {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns layout */
+  gap: 20px; /* Space between items */
+  justify-items: center;
+}
+
+.team-member {
+  text-align: center;
+}
+
+.team-member img {
+  width: 150px; /* Adjust image size */
+  height: 150px;
+  border-radius: 50%; /* Make the images circular */
+  object-fit: cover;
+}
+
+.team-member p {
+  margin-top: 10px;
+  font-weight: bold;
+  margin: 0; /* Removes all margin around paragraphs */
+  padding: 0; /* Removes all padding around paragraphs */
+  color: black;
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 768px) {
+  .vision-mission-values-grid,
+  .team-grid {
+    grid-template-columns: 1fr 1fr; /* 2 columns on medium screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .vision-mission-values-grid,
+  .team-grid {
+    grid-template-columns: 1fr; /* 1 column on small screens */
+  }
+}

@@ -1,0 +1,44 @@
+/* ProductList.css */
+.product-list {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+    font-family: Arial, sans-serif;
+}
+
+.product-list h1 {
+    text-align: center;
+    color: #333;
+}
+
+.product-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.product-list li {
+    background-color: #f9f9f9;
+    margin: 10px 0;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: box-shadow 0.3s;
+}
+
+.product-list li:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.product-list h2 {
+    margin: 0 0 10px;
+}
+
+.product-list p {
+    margin: 5px 0;
+}
+
+.loading {
+    text-align: center;
+    font-size: 18px;
+    color: #555;
+}
