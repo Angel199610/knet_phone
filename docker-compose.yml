@@ -1,91 +1,118 @@
-version: '3.9'  # Use the latest supported version for better features
-
-services:
-  backend:
-    build:
-      context: ./knet_phones_backend  # Path to your backend directory
-      dockerfile: Dockerfile  # Dockerfile for the backend
-    ports:
-      - "5000:5000"  # Maps container port 5000 to host port 5000
-    volumes:
-      - ./knet_phones_backend:/app  # Sync local changes to the container
-    environment:
-      FLASK_ENV: development  # Flask development environment
-    command: flask run --host=0.0.0.0 --port=5000  # Ensures Flask binds to the container IP
-    depends_on:
-      - db  # Optional: Add database dependency if needed
-
-  frontend:
-    build:
-      context: ./frontend-master  # Path to your frontend directory
-      dockerfile: Dockerfile  # Dockerfile for the frontend
-    ports:
-      - "3000:3000"  # Maps container port 3000 to host port 3000
-    volumes:
-      - ./frontend-master:/app  # Sync local changes to the container
-    environment:
-      NODE_ENV: development  # React development environment
-    stdin_open: true  # Keeps the container running for debugging
-
-  db:
-    image: mysql:8.0  # MySQL database image
-    container_name: mysql-db  # Optional: Container name
-    ports:
-      - "3306:3306"  # Maps MySQL port
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: knet_phones
-    volumes:
-      - db_data:/var/lib/mysql  # Persistent data storage
-
-volumes:
-  db_data:  # Persistent volume for database
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# # version: '3'
+# version: '3.9'  # Use the latest supported version for better features
 
 # services:
 #   backend:
-#     build: ./knet_phones_backend
+#     build:
+#       context: ./knet_phones_backend  # Path to your backend directory
+#       dockerfile: Dockerfile  # Dockerfile for the backend
 #     ports:
-#       - "5000:5000"  # Maps port 5000 of the container to port 5000 of the host
+#       - "5000:5000"  # Maps container port 5000 to host port 5000
 #     volumes:
-#       - ./knet_phones_backend:/app  # Bind mount to sync local changes
+#       - ./knet_phones_backend:/app  # Sync local changes to the container
 #     environment:
-#       - FLASK_ENV=development
+#       FLASK_ENV: development  # Flask development environment
+#     command: flask run --host=0.0.0.0 --port=5000  # Ensures Flask binds to the container IP
+#     depends_on:
+#       - db  # Optional: Add database dependency if needed
 
 #   frontend:
-#     build: ./frontend-master
+#     build:
+#       context: ./frontend-master  # Path to your frontend directory
+#       dockerfile: Dockerfile  # Dockerfile for the frontend
 #     ports:
-#       - "3000:3000"  # Maps port 3000 of the container to port 3000 of the host
+#       - "3000:3000"  # Maps container port 3000 to host port 3000
 #     volumes:
-#       - ./frontend-master:/app  # Bind mount to sync local changes
+#       - ./frontend-master:/app  # Sync local changes to the container
 #     environment:
-#       - NODE_ENV=development
+#       NODE_ENV: development  # React development environment
+#     stdin_open: true  # Keeps the container running for debugging
 
-#       #https://knetphones-742942d1-f3c0-4a6a-af26.cranecloud.io/
+#   db:
+#     image: mysql:8.0  # MySQL database image
+#     container_name: mysql-db  # Optional: Container name
+#     ports:
+#       - "3306:3306"  # Maps MySQL port
+#     environment:
+#       MYSQL_ROOT_PASSWORD: root
+#       MYSQL_DATABASE: knet_phones
+#     volumes:
+#       - db_data:/var/lib/mysql  # Persistent data storage
+
+# volumes:
+#   db_data:  # Persistent volume for database
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# # # version: '3'
+
+# # services:
+# #   backend:
+# #     build: ./knet_phones_backend
+# #     ports:
+# #       - "5000:5000"  # Maps port 5000 of the container to port 5000 of the host
+# #     volumes:
+# #       - ./knet_phones_backend:/app  # Bind mount to sync local changes
+# #     environment:
+# #       - FLASK_ENV=development
+
+# #   frontend:
+# #     build: ./frontend-master
+# #     ports:
+# #       - "3000:3000"  # Maps port 3000 of the container to port 3000 of the host
+# #     volumes:
+# #       - ./frontend-master:/app  # Bind mount to sync local changes
+# #     environment:
+# #       - NODE_ENV=development
+
+# #       #https://knetphones-742942d1-f3c0-4a6a-af26.cranecloud.io/
+
+
+name: Deploy to Docker Hub
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Login to Docker Hub
+      uses: docker/login-action@v2
+      with:
+        username: ${{ secrets.Tukahirwa }}
+        password: ${{ secrets.emily@?2001 }}
+
+    - name: Build and push Docker image
+      run: |
+        docker build -t Tukahirwa/knet-phones .
+        docker push Tukahirwa/knet-phones
