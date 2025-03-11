@@ -41,12 +41,12 @@ const About = () => {
         <div className="team-grid">
           <div className="team-member">
             <img src={teamMember1} alt="Team Member 1" />
-            <p>KOJJA SHARIF - CEO</p>
-            <p>Tel: +256 790 890 678</p>
+            <p>KOJJA ASHRAF - CEO</p>
+            <p>Tel: +256 709717910</p>
           </div>
           <div className="team-member">
             <img src={teamMember2} alt="Team Member 2" />
-            <p>KIBUMBA PHILEX - CTO</p>
+            <p>MMUKISA GEOFREY- CTO</p>
             <p>Tel: +256 785 209 757</p>
           </div>
           <div className="team-member">
